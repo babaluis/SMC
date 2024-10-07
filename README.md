@@ -1,0 +1,2 @@
+# SMC
+ncc project
