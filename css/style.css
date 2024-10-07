@@ -1,0 +1,410 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Ensure body and html take up full height */
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #91959c;
+  color: #333;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  
+}
+.main {
+  position: relative; /* Create a positioning context */
+  width: 100%; /* Responsive */
+  padding: 80px;
+  font-size: 18px;
+  margin-top: 60px;
+  background-color: #fff; /* Fallback color */
+  overflow: hidden; /* Prevent overflow */
+  
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/smedia.jpg");
+  background-size: cover; /* Ensure it covers the entire area */
+  background-repeat: no-repeat;
+  filter: blur(5px); /* Apply blur to the image */
+  z-index: 0; /* Send it to the back */
+}
+
+.content {
+  position: relative; /* Ensure content is above the blurred image */
+  z-index: 1; /* Bring content in front */
+  color: black; /* Adjust text color as needed */
+}
+
+.scene{
+
+  right: 0;          /* Aligns the div to the right edge of the page */
+  top: 50%;          /* Centers it vertically, adjust as needed */
+  transform: translateY(-50%);  /* Centers the div exactly in the middle of the viewport */
+  width: 200px;      
+  height: 200px;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+  left: 990px;
+  
+
+
+}
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+}
+/* Social media icons */
+.facebook { background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg'); }
+.twitter { background-image: url('https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg'); }
+.instagram { background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'); }
+.linkedin { background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg'); }
+.youtube { background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg'); }
+
+/* Positioning the icons in 3D space */
+.facebook { transform: translateZ(150px); }
+.twitter { transform: rotateY(72deg) translateZ(150px); }
+.instagram { transform: rotateY(144deg) translateZ(150px); }
+.linkedin { transform: rotateY(216deg) translateZ(150px); }
+.youtube { transform: rotateY(288deg) translateZ(150px); }
+
+/* Animation for rotating the 3D scene */
+@keyframes rotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+.content{
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adjust values as needed */
+}
+.keepsafe{
+  color: #fff;
+  text-align: left;
+  
+ 
+}
+.keepsafe #lisp{
+  position: relative;
+  left: 50px;
+}
+/* Navigation Bar Styling */
+.navbar {
+    background-color: #333;
+    position: fixed;  /* Makes the navbar stay at the top */
+    top: 0;           /* Positions it at the top of the page */
+    width: 100%;      /* Make the navbar stretch across the full width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    
+  }
+/* Logo */
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+/*user Icon */
+  .user-icon {
+    width: 30px;
+    height: 30px;
+    fill: #240fdf; /* You can change the color */
+  }  
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+    
+  }
+  .nav-links li {
+    position: relative;
+    
+  }
+/* Links Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    transition: background 0.3s ease;
+  }
+  .nav-links a:hover {
+    background-color: #575757;
+  }
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    left: -70px;
+
+    min-width: 160px;
+    top: 100%;
+    z-index: 1;
+  }
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+  }
+  .dropdown-content a:hover {
+    background-color: #d10a0a;
+  }
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+/* Hide the toggle button initially */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+/* Responsive Navigation for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #333;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 999;
+   
+      
+   
+  }
+
+  .nav-links li {
+      text-align: center;
+      margin: 10px 0;
+  }
+
+  .dropdown-content {
+    position: static;
+    min-width: 100%;
+  }
+  /* Show the menu toggle button */
+  .menu-toggle {
+      display: block;
+      
+  }
+  .navbar {
+ 
+    padding: 30px 20px;
+    overflow-y: auto;
+    
+  }
+}
+
+/* Toggle navbar menu on smaller screens */
+.nav-active {
+  display: flex;
+  
+}
+
+#header1{
+  color: rgb(146, 15, 15);
+  text-align: center;
+  padding: 25px;   
+  position: relative;
+  
+  
+ 
+}
+/* Search bar styling */
+.searchbar {
+  position: absolute; /* Makes it float independently */
+  top: 100px; /* Adjust to place below the header */
+  right: 100px; /* Adjust to place from the right */
+  z-index: 1000; /* Ensures it stays above content */
+}
+
+.searchbar input[type="text"] {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 9px;
+}
+#search {
+  width: 300px;                 /* Width of the search input */
+  padding: 10px;                /* Padding for input */
+  border: 1px solid #ccc;       /* Border for input */
+  border-radius: 4px;          /* Rounded corners */
+  position: relative;
+}
+/*@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    min-width: 100%;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    text-align: center;
+  }
+}*/
+
+
+  /* just to check and use later
+ Styles for tablets and larger devices 
+@media screen and (min-width: 768px) {
+    body {
+      font-size: 18px;
+    }
+  }
+  
+ Styles for desktops 
+  @media screen and (min-width: 1024px) {
+    body {
+      font-size: 20px;
+    }
+  }
+   */
+   /* Footer Styling */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  margin: 20px 0;
+  flex-basis: 30%;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style-type: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ff6347; /* Hover color */
+}
+
+.social-icons a img{
+  width: 100%;    /* responsive image */
+  height: auto;   /* Maintens aspect ratio */
+  max-width: 50px; /*maximu for larger screens */
+  border-radius: 50%;  /* Makes the image oval by rounding the corners */
+  object-fit: cover;   /* Ensures the image fits within the oval */
+}
+
+.social-icons a:hover {
+  color: #ff6347;
+}
+
+.footer-bottom {
+ 
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer .container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-section {
+      flex-basis: 100%;
+  }
+    /* Adjust search bar for small screens */
+
+  .search input[type="text"] {
+      width: 90%;         /* Make the search input smaller to fit mobile view */
+      padding: 10px;
+  }
+  .face {
+    width: 90%;         /* Make the search input smaller to fit mobile view */
+    padding: 10px;
+}
+.scene{
+
+  top: 50%;          /* Centers it vertically, adjust as needed */
+  transform: translateY(-50%);  /* Centers the div exactly in the middle of the viewport */
+  width: 30%;      
+  height: 30%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+  left: 0;
+  
+
+
+}
+}
