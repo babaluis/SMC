@@ -16,6 +16,15 @@ body {
   flex-direction: column;
   
 }
+.main2{
+  position: relative; /* Create a positioning context */
+  width: 100%; /* Responsive */
+  padding: 80px;
+  font-size: 18px;
+  margin-top: 60px;
+  background-color: #fff; /* Fallback color */
+  overflow: hidden; /* Prevent overflow */
+}
 .main {
   position: relative; /* Create a positioning context */
   width: 100%; /* Responsive */
@@ -46,7 +55,29 @@ body {
   z-index: 1; /* Bring content in front */
   color: black; /* Adjust text color as needed */
 }
+.content2 {
 
+  color: black; /* Adjust text color as needed */
+  padding: 10px 15px;
+}
+#apps{
+  text-align: center;
+}
+.table{
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+.main2 h1{
+  text-align: center;
+}
 .scene{
 
   right: 0;          /* Aligns the div to the right edge of the page */
