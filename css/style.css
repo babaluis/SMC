@@ -16,13 +16,26 @@ body {
   flex-direction: column;
   
 }
+#tito{
+  color: black;
+  text-decoration: solid;
+}
+#pt1{
+ text-decoration: solid;
+  text-align: center;
+}
+.lei{
+  text-align: center;
+  padding: 0vh;
+  text-decoration: solid;
+}
 .main2{
   position: relative; /* Create a positioning context */
   width: 100%; /* Responsive */
   padding: 80px;
   font-size: 18px;
   margin-top: 60px;
-  background-color: #fff; /* Fallback color */
+  background-color: lightblue; /* Fallback color */
   overflow: hidden; /* Prevent overflow */
 }
 .main {
@@ -66,6 +79,8 @@ body {
 .table{
   width: 100%;
   border-collapse: collapse;
+  background-color: rgb(44, 50, 78); /* Table background */
+
 }
 th, td {
   border: 1px solid black;
@@ -73,7 +88,7 @@ th, td {
   text-align: left;
 }
 th {
-  background-color: #f2f2f2;
+  background-color: #461b1b;
 }
 .main2 h1{
   text-align: center;
@@ -92,6 +107,35 @@ th {
   
 
 
+}
+.content3 {
+  display: flex;
+  height: 100%;
+}
+.section-content {
+  max-width: 80%;
+}
+.rightParents {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  padding: 20px;
+}
+.leftParents {
+  flex: 1;
+  background-image: url('../img/parents.png'); 
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 .face {
   position: absolute;

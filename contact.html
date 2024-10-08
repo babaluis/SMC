@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Sections with Different Backgrounds</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container to hold the two sections */
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Left section */
+        .left {
+            flex: 1;
+            background-image: url('https://via.placeholder.com/800x600'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Right section */
+        .right {
+            flex: 1;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Section content */
+        .section-content {
+            max-width: 80%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container holding both sections -->
+    <div class="container">
+        <!-- Left section with background image -->
+        <div class="left">
+            <div class="section-content">
+                <h1>Left Section</h1>
+                <p>This section is on the left and has a background image. You can put any content here like text, buttons, or other elements.</p>
+            </div>
+        </div>
+
+        <!-- Right section with background color -->
+        <div class="right">
+            <div class="section-content">
+                <h1>Right Section</h1>
+                <p>This section is on the right and has a solid background color. You can put different content here, such as text, forms, or images.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

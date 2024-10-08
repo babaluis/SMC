@@ -42,13 +42,13 @@
   
       <main class="main2">
           <header class="header">
-                 <h1  id="tito" >Social Media Campaigns
+                 <h1  id="" >Social Media Campaigns
            </h1>
           </header>
           <div class="searchbr">
                               
             <form class="" method="POST" action="#">
-                <input type="search" onkeyup="searchApps()" id="search" placeholder="Search here...." >
+                <input type="search" id="search" placeholder="Search here...." >
              
             </form>
         </div>
@@ -59,22 +59,7 @@
              
             <div id="apps">
                 <h2>Most Popular Social Media Apps</h2>
-                <table border="1" class="table" id="popularApps">
-                    <thead>
-                        <th>Position</th>
-                        <th>Social Media</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Facebook</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Whatsapp</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <?php include 'view_search.php'; ?>
             </div>
              
           </div>
@@ -109,28 +94,6 @@
           </footer>
       </body>
 </httml>
-<script>
-    function searchApps() {
-        // Get input value and convert to uppercase for case-insensitive search
-        var input = document.getElementById("search");
-        var filter = input.value.toUpperCase();
-        var table = document.getElementById("popularApps");
-        var tr = table.getElementsByTagName("tr");
-
-        // Loop through all table rows (excluding the header)
-        for (var i = 1; i < tr.length; i++) {
-            var td = tr[i].getElementsByTagName("td")[1]; // Search in the second column 
-            if (td) {
-                var txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = ""; // Show row if match is found
-                } else {
-                    tr[i].style.display = "none"; // Hide row if no match
-                }
-            }
-        }
-    }
-</script>
 <script>
   document.getElementById('menuToggle').addEventListener('click', function () {
     const navLinks = document.querySelector('.nav-links');
