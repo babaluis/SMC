@@ -8,6 +8,9 @@
 html, body {
   height: 100%;
 }
+/*Modal CSS Codes  */
+
+/*Modal CSS end code */
 body {
   background-color: #91959c;
   color: #333;
@@ -15,6 +18,49 @@ body {
   display: flex;
   flex-direction: column;
   
+}
+.addmedia{
+  position: relative;
+
+  padding: auto;
+  text-shadow: #060303;
+  color: #060303;
+
+}
+.addmedia input{
+  padding: 5px;
+  border: 2px solid #21367a;
+  transition: border-color 0.3s, box-shadow 0.3s; 
+}
+.addmedia #mediabtn{
+  background-color: #4CAF50;
+}
+.contact input{
+  padding: 10px;
+  border: 2px solid ;
+  transition: border-color 0.3s, box-shadow 0.3s; 
+  width: 355px;
+}
+.contact .textarea{
+  padding: 15px;
+  border: 2px solid  #21367a;
+  height: 150px;
+  transition: border-color 0.3s, box-shadow 0.3s; 
+  width: 355px;
+}
+.contact #send_contact{
+  padding: 7px;
+  border: 2px solid  #21367a;
+  color: black;
+  background-color: #4CAF50;
+  transition: border-color 0.3s, box-shadow 0.3s; 
+  width: 300px;
+  cursor: pointer;
+}
+
+.addmedia h2{
+  left: 224x;
+  position: relative;
 }
 #tito{
   color: black;
@@ -104,7 +150,6 @@ th {
   transform-style: preserve-3d;
   animation: rotate 10s infinite linear;
   left: 990px;
-  
 
 
 }
@@ -112,6 +157,75 @@ th {
   display: flex;
   height: 100%;
 }
+/*Modal popout Start */
+.loginmodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(153, 27, 27, 0.5); /* Black w/ opacity */
+}
+.policymodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(153, 27, 27, 0.5); /* Black w/ opacity */
+}
+.login-content {
+  background-color: #216eb0;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 75px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.policy-content {
+  background-color: #fff;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 75px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+  color: #060303;
+}
+.login-content input{
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #4CAF50; /* Green border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transition effects */
+}
+.login-content .error-message {
+  color: red;
+  display: none; /* Hidden initially */
+}
+
+.close {
+  color: #060303;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*Modal popout end */
 .section-content {
   max-width: 80%;
 }
@@ -244,9 +358,11 @@ th {
     display: block;
     color: white;
     text-align: center;
+    cursor: pointer;
   }
   .dropdown-content a:hover {
     background-color: #d10a0a;
+    cursor: pointer;
   }
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {

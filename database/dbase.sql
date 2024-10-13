@@ -3,7 +3,7 @@ CREATE DATABASE smc;
 USE smc;
 
 CREATE TABLE records (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT(11) AUTO_INCREMENT ,
     name VARCHAR(100),
     description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

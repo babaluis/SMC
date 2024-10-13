@@ -12,33 +12,33 @@
         </head>
         <body>
      
-          <nav class = "navbar">
-            <div class="logo">SMC</div>
-              <ul class="nav-links">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="social_media.html">Most Popular Social Media Apps</a></li>
-                  <li><a href="how_parents_help.html">How Parents Can Help</a></li>
-                  <li><a href="livestreaming.html">Livestreaming</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="legislation_guidance.html">Legislation and Guidance</a></li>
-        
-            
-              <li class="dropdown"><a href="#">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" class="user-icon">
-                <path d="M0 0h24v24H0z" fill="none"/> <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-            </svg></a>
-            <div class="dropdown-content">
-              <a href="">Login</a>
-             <a href="">SignUP</a>
-            </div>
-          </li>
-          
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-          </div>
-      </nav>
+            <nav class = "navbar">
+                <div class="logo">SMC</div>
+                  <ul class="nav-links">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="social_media.html">Most Popular Social Media Apps</a></li>
+                      <li><a href="how_parents_help.html">How Parents Can Help</a></li>
+                      <li><a href="livestreaming.html">Livestreaming</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="legislation_guidance.html">Legislation and Guidance</a></li>
+    
+                  <li class="dropdown"><a href="#">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" class="user-icon">
+                    <path d="M0 0h24v24H0z" fill="none"/> <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg></a>
+                <div class="dropdown-content">
+                  <a type= 'submit' id='loginModalBtn' >Login</a>
+                 
+                 <a type= 'submit' id='registerModalBtn'>SignUP</a>
+                </div>
+              </li>
+              
+                </ul>
+                <div class="menu-toggle" id="menuToggle">
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+              </div>
+          </nav>
   
       <main class="main2">
           <header class="header">
@@ -56,10 +56,40 @@
           <div class="content2">
 
              <p>Search for the Latest Techniques to stay safe online.</p>
-             
+             <div class="content">
+                <div id="loginmodal" class="loginmodal">
+                    <div class="login-content">
+                        <span class="close" id="closeModalBtn">&times;</span>
+                       <form id="loginForm" action="login.php" method="post">
+                        <h2>Login into SMC</h2><br>
+                        
+                        <input type="text" placeholder="Enter your Username" name = "username" id = "username" required >
+                        <input type="password" placeholder="Enter your Password" name = "password" id = "password"  required ><br><br>
+                        <span class="error-message" id="errorMessage">Invalid credentials. Please try again.</span><br><br>
+                        <input type="submit" name ="login" value="Login" >
+                      </form>
+                    </div>
+                </div>
+                <div id="registrationmodal" class="loginmodal">
+                  <div class="login-content">
+                      <span class="close" id="closeregModalBtn">&times;</span>
+                     <form action="registration.php" method="post">
+                      <h2>Register Into this Community</h2><br>
+                      
+                      <input type="text" placeholder="Enter your First Name" name="fname" required ><br>
+                      <input type="text" placeholder="Enter your Last Name" name="lname" required ><br>
+                      <input type="text" placeholder="Enter your username" name="username" required ><br>
+                      <input type="email" placeholder="Enter your email" name="email" required ><br>
+                      <input type="password" placeholder="Enter your Password" name="password" required ><br>
+                      <input type="password" placeholder="Re-enter Password" name="rpassword" required ><br><br>
+                      <input type="submit" name = "register" value="Registration" >
+                    </form>
+                  </div>
+              </div>
+        </div>
             <div id="apps">
                 <h2>Most Popular Social Media Apps</h2>
-                <table border="1" class="table" id="popularApps">
+                <table border="3" class="table" id="popularApps">
                     <thead>
                         <th>Position</th>
                         <th>Social Media</th>
@@ -72,6 +102,26 @@
                         <tr>
                             <td>2</td>
                             <td>Whatsapp</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Instagram</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>X</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Tik Tok</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Snapchat</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Linkedin</td>
                         </tr>
                     </tbody>
                 </table>
@@ -108,6 +158,7 @@
            
           </footer>
       </body>
+      <script src="js/script.js"></script>
 </httml>
 <script>
     function searchApps() {
@@ -131,11 +182,4 @@
         }
     }
 </script>
-<script>
-  document.getElementById('menuToggle').addEventListener('click', function () {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('nav-active');
-    
-});
 
-</script>

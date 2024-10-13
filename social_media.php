@@ -16,7 +16,7 @@
             <div class="logo">SMC</div>
               <ul class="nav-links">
                   <li><a href="index.html">Home</a></li>
-                  <li><a href="social_media.html">Most Popular Social Media Apps</a></li>
+                  <li><a href="social_media.php">Perfil</a></li>
                   <li><a href="how_parents_help.html">How Parents Can Help</a></li>
                   <li><a href="livestreaming.html">Livestreaming</a></li>
                   <li><a href="contact.html">Contact</a></li>
@@ -27,8 +27,8 @@
                 <path d="M0 0h24v24H0z" fill="none"/> <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
             </svg></a>
             <div class="dropdown-content">
-              <a href="">Login</a>
-             <a href="">SignUP</a>
+          
+             <a href="logout.php">logout</a>
             </div>
           </li>
           
@@ -45,13 +45,20 @@
                  <h1  id="" >Social Media Campaigns
            </h1>
           </header>
-          <div class="searchbr">
-                              
-            <form class="" method="POST" action="#">
-                <input type="search" id="search" placeholder="Search here...." >
-             
+     
+        <div class="addmedia">
+            <h2>Add Into your Table</h2>
+            <form method="post" action="addmedia.php">
+            <input type="text" name="social" required placeholder="Social Media Name">
+            <input type="text" name="desc" required placeholder="Description">
+            <input id = "mediabtn" name="mediabtn" type="submit" value="Add" >
             </form>
-        </div>
+        </div><br>
+        <div class="searchbr">          
+                   <form class="" method="POST" action="#">
+               <input type="search" onkeyup="searchApps()" id="search" placeholder="Search here...." >
+             </form>
+       </div>
   
           <div class="content2">
 
@@ -101,4 +108,26 @@
     
 });
 
+</script>
+<script>
+    function searchApps() {
+        // Get input value and convert to uppercase for case-insensitive search
+        var input = document.getElementById("search");
+        var filter = input.value.toUpperCase();
+        var table = document.getElementById("popularApps");
+        var tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows (excluding the header)
+        for (var i = 1; i < tr.length; i++) {
+            var td = tr[i].getElementsByTagName("td")[1]; // Search in the second column 
+            if (td) {
+                var txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = ""; // Show row if match is found
+                } else {
+                    tr[i].style.display = "none"; // Hide row if no match
+                }
+            }
+        }
+    }
 </script>
